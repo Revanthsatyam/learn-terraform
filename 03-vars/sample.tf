@@ -54,5 +54,5 @@ output "fruit_stock_apple" {
 
 # Access a Map of Maps Variable.
 output "fruit_stock_with_price" {
-  value = var.fruit_stock_with_price["apple"]
+  value = var.fruit_stock_with_price["apple"].stock
 }
