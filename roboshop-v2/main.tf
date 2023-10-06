@@ -29,21 +29,20 @@ variable "components" {
   }
 }
 
-output "components" {
-  value = var.components["frontend"].name
+resource "aws_instance" "instance" {
+  for_each = var.components
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.security_groups
+
+  tags = {
+    Name = lookup(each.value, "name", null)
+  }
 }
 
-#resource "aws_instance" "frontend" {
-#  for_each = var.components
-#  ami           = var.ami
-#  instance_type = var.instance_type
-#  vpc_security_group_ids = var.security_groups
-#
-#  tags = {
-#    Name = lookup(each.value, "name", null)
-#  }
-#}
-
+output "instances" {
+  value = aws_instance.instance
+}
 #resource "aws_route53_record" "record" {
 #  for_each = var.components
 #  zone_id = var.zone_id
