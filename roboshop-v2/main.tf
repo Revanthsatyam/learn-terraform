@@ -30,7 +30,7 @@ variable "components" {
 }
 
 output "components" {
-  value = lookup(var.components, "frontend"[name], null)
+  value = var.components["frontend"].name
 }
 
 #resource "aws_instance" "frontend" {
