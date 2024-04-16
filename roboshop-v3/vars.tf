@@ -1,5 +1,5 @@
 variable "vpc_security_group_ids" {
-  default = [ "sg-0f15c7e71393537f6" ]
+  default = ["sg-0f15c7e71393537f6"]
 }
 
 variable "zone_id" {
@@ -9,48 +9,48 @@ variable "zone_id" {
 
 variable "components" {
   default = {
-    frontend  = {
-      name = "frontend"
+    frontend = {
+      name          = "frontend"
       instance_type = "t3.micro"
     }
-    mongodb  = {
-      name = "mongodb"
+    mongodb = {
+      name          = "mongodb"
       instance_type = "t3.micro"
     }
-    catalogue  = {
-      name = "catalogue"
+    catalogue = {
+      name          = "catalogue"
       instance_type = "t3.micro"
     }
-    redis  = {
-      name = "redis"
+    redis = {
+      name          = "redis"
       instance_type = "t3.micro"
     }
-    user  = {
-      name = "user"
+    user = {
+      name          = "user"
       instance_type = "t3.micro"
     }
-    cart  = {
-      name = "cart"
+    cart = {
+      name          = "cart"
       instance_type = "t3.micro"
     }
-    mysql  = {
-      name = "mysql"
+    mysql = {
+      name          = "mysql"
       instance_type = "t3.micro"
     }
-    shipping  = {
-      name = "shipping"
+    shipping = {
+      name          = "shipping"
       instance_type = "t3.micro"
     }
-    rabbitmq  = {
-      name = "rabbitmq"
+    rabbitmq = {
+      name          = "rabbitmq"
       instance_type = "t3.micro"
     }
-    payment  = {
-      name = "payment"
+    payment = {
+      name          = "payment"
       instance_type = "t3.micro"
     }
-    dispatch  = {
-      name = "dispatch"
+    dispatch = {
+      name          = "dispatch"
       instance_type = "t3.micro"
     }
   }
