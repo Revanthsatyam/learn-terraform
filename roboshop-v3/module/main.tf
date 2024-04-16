@@ -16,7 +16,9 @@ resource "aws_route53_record" "record" {
   records  = [aws_instance.instance.private_ip]
 }
 
+
 resource "null_resource" "ansible" {
+
   depends_on = [
     aws_route53_record.record
   ]
